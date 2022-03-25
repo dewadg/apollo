@@ -34,7 +34,8 @@
     "build:code": "node esbuild.mjs && tsc -d --emitDeclarationOnly",
     "prepublishOnly": "yarn test && yarn build",
     "test": "yarn test:types",
-    "test:types": "tsc -p tests/types/"
+    "test:types": "tsc -p tests/types/",
+    "test:integration": "tap --ts --no-coverage tests/integration/**/*.test.ts"
   },
   "dependencies": {
     "throttle-debounce": "^3.0.1",
@@ -54,8 +55,13 @@
   },
   "devDependencies": {
     "@apollo/client": "^3.4.0",
+    "@types/tap": "^15.0.6",
     "@types/throttle-debounce": "^2.1.0",
+    "cross-fetch": "^3.1.5",
     "nodemon": "^1.18.4",
+    "tap": "^16.0.1",
+    "ts-node": "^10.7.0",
+    "typescript": "^4.6.3",
     "vue": "^3.1.0"
   }
 }
